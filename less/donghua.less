@@ -1,0 +1,171 @@
+/* show hide */
+@keyframes show {
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  0% {
+    transform: scale(0, 0);
+    opacity:0;
+  }
+}
+@keyframes hide {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0, 0);
+    opacity:0;
+  }
+}
+*[data-a=animate-hide]{
+  animation: hide 1s ease forwards;
+  transform-origin: left top;
+}
+*[data-a=animate-show]{
+  animation: show 1s ease forwards;
+  transform-origin: left top;
+}
+/* fadein fadeout*/
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity:0;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+*[data-a=animate-fadein]{
+  animation: hide 1s ease forwards;
+  transform-origin: left top;
+}
+*[data-a=animate-fadeout]{
+  animation: show 1s ease forwards;
+  transform-origin: left top;
+}
+/*down up*/
+@keyframes up {
+  0%{
+    transform: scale(1,1);
+  }
+  100%{
+    transform: scale(1,0);
+  }
+}
+@keyframes down {
+  0%{
+    transform: scale(1,0);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+}
+*[data-a=animate-down]{
+  animation: down 1s ease forwards;
+  transform-origin: left top;
+}
+*[data-a=animate-up]{
+  animation: up 1s ease forwards;
+  transform-origin: left top;
+}
+
+/*圆周运动*/
+@r:30;
+@a:0;
+@p:10;
+@num:360/@p;
+.round(@i:0) when (@i<=@num) {
+  @select:100/@num*@i*1%;
+  @a:@p*@i;
+  @{select}{
+    transform: translate(cos(@a*-1*pi()/180)*@r*1px,sin(@a*-1*pi()/180)*@r*1px);
+  }
+  .round(@i+1);
+}
+@keyframes round {
+  .round();
+}
+*[data-a*=animate-round]{
+  animation: round 1s linear infinite ;
+}
+
+/*曲线运动*/
+@r:30;
+@r1:15;
+@a:0;
+@a1:0;
+@p:3;
+@p1:9;
+@num:360/@p;
+.quxian(@i:0) when (@i<=@num) {
+  @select:100/@num*@i*1%;
+  @a:@p*@i;
+  @a1:@p1*@i;
+  @{select}{
+    transform: translate(cos(@a*pi()/180)*@r*1px-@r*1px,sin(@a1*pi()/180)*@r1*1px);
+  }
+  .quxian(@i+1);
+}
+@keyframes quxian {
+  .quxian();
+}
+*[data-a*=animate-quxian] {
+  animation: quxian 4s linear 0.5;
+  animation-fill-mode: backwards;
+}
+/*旋转*/
+@keyframes xuanzhuan {
+  0%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
+}
+*[data-a*=animate-xuanzhuan] {
+  animation: xuanzhuan 4s linear infinite;
+}
+
+/*等待*/
+@r:30;
+@num:8;
+@a:0;
+@p:5;
+.dengdai(@i:0) when (@i<=@num) {
+  @select:100/@num*@i*1%;
+  @{select}{
+      box-shadow: cos(@a*pi()/180)*@r*1px sin(@a*pi()/180)*@r*1px 20px #000;
+  }
+  .quxian(@i+1);
+}
+@keyframes dengdai {
+  .dengdai();
+}
+*[data-a*=animate-dengdai] {
+  animation: dengdai 4s linear infinite;
+}
+
+
+/*闪动*/
+@keyframes sd {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+*[data-a=animate-sd]{
+  animation: sd 1s linear alternate 4;
+}
+
+

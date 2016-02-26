@@ -1,0 +1,203 @@
+/* show hide */
+@keyframes show {
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes hide {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+}
+*[data-a=animate-hide] {
+  animation: hide 1s ease forwards;
+  transform-origin: left top;
+}
+*[data-a=animate-show] {
+  animation: show 1s ease forwards;
+  transform-origin: left top;
+}
+/* fadein fadeout*/
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+*[data-a=animate-fadein] {
+  animation: hide 1s ease forwards;
+  transform-origin: left top;
+}
+*[data-a=animate-fadeout] {
+  animation: show 1s ease forwards;
+  transform-origin: left top;
+}
+/*down up*/
+@keyframes up {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1, 0);
+  }
+}
+@keyframes down {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+*[data-a=animate-down] {
+  animation: down 1s ease forwards;
+  transform-origin: left top;
+}
+*[data-a=animate-up] {
+  animation: up 1s ease forwards;
+  transform-origin: left top;
+}
+/*圆周运动*/
+@keyframes round {
+  0% {
+    transform: translate(30px, 0px);
+  }
+  12.5% {
+    transform: translate(29.88584094px, -2.61467228px);
+  }
+  25% {
+    transform: translate(29.54423259px, -5.20944533px);
+  }
+  37.5% {
+    transform: translate(28.97777479px, -7.76457135px);
+  }
+  50% {
+    transform: translate(28.19077862px, -10.2606043px);
+  }
+  62.5% {
+    transform: translate(27.18923361px, -12.67854785px);
+  }
+  75% {
+    transform: translate(25.98076211px, -15px);
+  }
+  87.5% {
+    transform: translate(24.57456133px, -17.20729309px);
+  }
+  100% {
+    transform: translate(22.98133329px, -19.28362829px);
+  }
+}
+*[data-a*=animate-round] {
+  animation: round 1s linear infinite ;
+}
+/*曲线运动*/
+@keyframes quxian {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  12.5% {
+    transform: translate(-0.11415906px, 2.34651698px);
+  }
+  25% {
+    transform: translate(-0.45576741px, 4.63525492px);
+  }
+  37.5% {
+    transform: translate(-1.02222521px, 6.8098575px);
+  }
+  50% {
+    transform: translate(-1.80922138px, 8.81677878px);
+  }
+  62.5% {
+    transform: translate(-2.81076639px, 10.60660172px);
+  }
+  75% {
+    transform: translate(-4.01923789px, 12.13525492px);
+  }
+  87.5% {
+    transform: translate(-5.42543867px, 13.36509786px);
+  }
+  100% {
+    transform: translate(-7.01866671px, 14.26584774px);
+  }
+}
+*[data-a*=animate-quxian] {
+  animation: quxian 4s linear 0.5;
+  animation-fill-mode: backwards;
+}
+/*旋转*/
+@keyframes xuanzhuan {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+*[data-a*=animate-xuanzhuan] {
+  animation: xuanzhuan 4s linear infinite;
+}
+/*等待*/
+@keyframes dengdai {
+  0% {
+    box-shadow: 29.88584094px 2.61467228px 20px #000;
+  }
+  12.5% {
+    transform: translate(-0.11415906px, 2.34651698px);
+  }
+  25% {
+    transform: translate(-0.45576741px, 4.63525492px);
+  }
+  37.5% {
+    transform: translate(-1.02222521px, 6.8098575px);
+  }
+  50% {
+    transform: translate(-1.80922138px, 8.81677878px);
+  }
+  62.5% {
+    transform: translate(-2.81076639px, 10.60660172px);
+  }
+  75% {
+    transform: translate(-4.01923789px, 12.13525492px);
+  }
+  87.5% {
+    transform: translate(-5.42543867px, 13.36509786px);
+  }
+  100% {
+    transform: translate(-7.01866671px, 14.26584774px);
+  }
+}
+*[data-a*=animate-dengdai] {
+  animation: dengdai 4s linear infinite;
+}
+/*闪动*/
+@keyframes sd {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+*[data-a=animate-sd] {
+  animation: sd 1s linear alternate 4;
+}

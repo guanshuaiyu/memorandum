@@ -1,0 +1,52 @@
+@font-face {font-family: 'a';
+  src:url('../font/iconfont.ttf');
+}
+
+@name1:shu;
+@name2:fdj;
+@name3:yumao;
+@name4:shezhi;
+@name5:ye;
+@name6:xinfeng;
+@con1:e69b;
+@con2:e649;
+@con3:f00f5;
+@con4:e604;
+@con5:e602;
+@con6:e640;
+.for(@i:1) when (@i<=6){
+  @n:"name@{i}";
+  @n1:@@n;
+  @c:"con@{i}";
+  @c1:@@c;
+  *[data-role=@{n1}]:before{
+    content: "\@{c1}";
+    font-family: "a";
+  }
+  *[data-role=@{n1}][icon-pos=top]:before{
+    content: "\@{c1}";
+    font-family: "a";
+    display: block;
+    text-align: center;
+  }
+  *[data-role=@{n1}][icon-pos=right]:before{
+    content: "";
+    font-family: "a";
+  }
+  *[data-role=@{n1}][icon-pos=right]:after{
+    content: "\@{c1}";
+    font-family: "a";
+  }
+  *[data-role=@{n1}][icon-pos=bottom]:before{
+    content: "";
+    font-family: "a";
+  }
+  *[data-role=@{n1}][icon-pos=bottom]:after{
+    content: "\@{c1}";
+    font-family: "a";
+    display: block;
+    text-align: center;
+  }
+  .for(@i+1);
+}
+.for();

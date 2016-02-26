@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/data.css">
+    <link rel="stylesheet" href="css/donghua.css">
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+</script>
+</head>
+<body id="body">
+<div class="panel panel-warning zindex header">
+    <div class="panel-heading">
+        <h3 class="panel-title">备忘录</h3>
+    </div>
+    <div class="panel-body add">
+       <div class="glyphicon glyphicon-plus"></div>
+    </div>
+</div>
+<form  class="zindex">
+   <button type="button" class="Close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div class="form-group">
+        <label for="exampleInputEmail1">标题</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">内容</label>
+        <textarea class="form-control" rows="3"></textarea>
+        <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">时间</label>
+        <input type="date" id="time">
+    </div>
+    <button type="button" class="btn btn-default submit">Submit</button>
+</form>
+<div class="panel panel-default con">
+    <div class=" glyphicon-trash del">×</div>
+    <div class="panel-heading ">标题</div>
+    <div class="panel-body biaoti"></div>
+    <div class="panel-heading ">内容</div>
+    <div class="panel-body con-con neirong"></div>
+    <div class="panel-heading">时间</div>
+    <div class="panel-body shijian"></div>
+</div>
+</body>
+</html>

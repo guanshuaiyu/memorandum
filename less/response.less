@@ -1,0 +1,126 @@
+@import "var1.less";
+@import "base.less";
+* {
+  box-sizing: border-box;
+}
+*[text-c]{
+  text-align: center;
+}
+*[text-l]{
+  text-align: left;
+}
+*[text-r]{
+  text-align: right;
+}
+
+.container {
+.response(s);
+  @media screen and (max-width: @num1) {
+    .public();
+    & > .row > .col-s-v {
+      display: block;
+    }
+    & > .row > .col-s-h {
+      display: none;
+    }
+    &-fluid > .row > .col-s-v {
+      display: block;
+    }
+    &-fluid > .row > .col-s-h {
+      display: none;
+    }
+    .response(s);
+  }
+}
+.public(){
+  width: @num1*1px-100px;
+  margin: 0 auto;
+  .clear();
+  & > .row {
+    //&表示自己container
+    width: 100%;
+    .clear();
+  }
+  &-fluid {
+    width: 100%;
+    .clear();
+  }
+  &-fluid > .row {
+    width: 100%;
+    .clear();
+  }
+}
+.response(@type,@i:0) when (@i<=@col) {
+  & > .row > .col-@{type}-@{i} {
+    float: left;
+    width: @i/@col*100%;
+  }
+  &-fluid > .row > .col-@{type}-@{i} {
+    float: left;
+    width: @i/@col*100%;
+  }
+  & > .row > .col-@{type}-left-@{i} {
+    position: relative;
+    left: @i/@col*-100%;
+  }
+  &-fluid > .row > .col-@{type}-left-@{i} {
+    position: relative;
+    left: @i/@col*-100%;
+  }
+  & > .row > .col-@{type}-right-@{i} {
+    position: relative;
+    left: @i/@col*100%;
+  }
+  &-fluid > .row > .col-@{type}-right-@{i} {
+    position: relative;
+    left: @i/@col*100%;
+  }
+  .response(@type, @i+1);
+}
+.container {
+  @media screen and (min-width: @num1) and(max-width: @num2) {
+    & > .row > .col-m-v {
+      display: block;
+    }
+    & > .row > .col-m-h {
+      display: none;
+    }
+    &-fluid > .row > .col-m-v {
+    display: block;
+    }
+    &-fluid > .row > .col-m-h {
+      display: none;
+    }
+    .public();
+    width: @num1;
+    .response(m);
+  }
+}
+.container {
+  @media screen and (min-width: @num2) {
+    & > .row > .col-l-v {
+      display: block;
+    }
+    & > .row > .col-l-h {
+      display: none;
+    }
+    &-fluid > .row > .col-l-v {
+      display: block;
+    }
+    &-fluid > .row > .col-l-h {
+      display: none;
+    }
+    .public();
+    width: @num2;
+    .response(l);
+  }
+}
+.clear() {
+  &:before, &:after {
+    content: "";
+    display: block;
+  }
+  &:after {
+    clear: both;
+  }
+}
